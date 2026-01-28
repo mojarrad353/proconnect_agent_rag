@@ -42,26 +42,25 @@ The project demonstrates:
 
 ## ▶️ How to Run the Project
 
-### 1. Prerequisites
+## 1. Prerequisites
 Ensure you have `uv` installed (or use pip/poetry):
-```bash
 pip install uv
 
-### 2. Prerequisites
+## 2. Prerequisites
 git clone https://github.com/mojarrad353/proconnect_agent_rag.git
 
 cd proconnect_agent_rag
 
-### 3.Configure Environment
+## 3.Configure Environment
 Create a .env file in the root directory and add your API keys
 
-### 4. Install Dependencies
+## 4. Install Dependencies
 uv sync
 
-### 5. Run the agent
-For showing in the web using Gradio
+## 5. Run the agent
+For showing on the web using Gradio: 
 uv run src/app.py
 
-For showing in the termina
+For showing in the terminal: 
 uv run src/main.py
 
