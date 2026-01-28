@@ -10,7 +10,7 @@
 
 ## 📌 Project Overview
 
-**ProConnect** is an AI-powered **Autonomous Agent** that automates the research required for professional networking. It uses a **Retrieval-Augmented Generation (RAG)** approach to search the live web for a person's recent activity and drafts a personalized LinkedIn connection request in seconds.
+**ProConnect** is an AI-powered **Autonomous Agent** that automates the research required for professional networking. It uses a **Retrieval-Augmented Generation (RAG)** approach to search the live web for a person's recent activity and drafts a personalized LinkedIn connection request.
 
 The project demonstrates:
 - **Agentic Search:** Autonomously querying Google via **SerpApi** to find real-time information.
