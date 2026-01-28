@@ -1,4 +1,4 @@
-# 🤝 ProConnect: RAG-Powered LinkedIn Agent
+# 🤝 Proconnect: RAG-Powered LinkedIn Agent
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![LangChain](https://img.shields.io/badge/LangChain-Agentic_RAG-green)
