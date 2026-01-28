@@ -1,0 +1,31 @@
+{
+  "full_name": "Sarah Jenkins",
+  "headline": "Senior Product Manager | AI & Fintech Enthusiast",
+  "about": "Product leader with 10+ years of experience building scalable fintech solutions. Passionate about using AI to solve real user problems. Previously led the payments team at TechFlow and scaled the user base from 10k to 1M.",
+  "experience": [
+    {
+      "role": "Director of Product",
+      "company": "NovaBank",
+      "duration": "2021 - Present",
+      "description": "Leading the AI-driven personal finance division. Launched 'NovaAssistant', a generative AI financial coach."
+    },
+    {
+      "role": "Senior Product Manager",
+      "company": "TechFlow",
+      "duration": "2018 - 2021",
+      "description": "Managed the core payments infrastructure. Reduced transaction latency by 40% and led a cross-functional team of 15 engineers."
+    }
+  ],
+  "education": [
+    {
+      "degree": "MBA",
+      "school": "Stanford Graduate School of Business",
+      "year": "2018"
+    }
+  ],
+  "recent_activity": [
+    "Posted about the ethical implications of LLMs in banking.",
+    "Shared an article on the future of contactless payments."
+  ],
+  "skills": ["Product Strategy", "Generative AI", "Agile Leadership", "Fintech", "Python"]
+}
