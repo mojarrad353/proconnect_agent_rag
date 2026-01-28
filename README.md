@@ -1,66 +1,108 @@
-# 🤝 Proconnect: RAG-Powered LinkedIn Agent
+# 🤝 ProConnect: RAG-Powered LinkedIn Agent
 
-![Python](https://img.shields.io/badge/Python-3.12-blue)
-![LangChain](https://img.shields.io/badge/LangChain-Agentic_RAG-green)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-orange)
-![SerpApi](https://img.shields.io/badge/API-SerpApi-red)
-![Gradio](https://img.shields.io/badge/Frontend-Gradio-lightgrey)
+![Python](https://img.shields.io/badge/Python-3.12%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-Agentic_RAG-green?style=for-the-badge)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o-orange?style=for-the-badge&logo=openai&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Gradio](https://img.shields.io/badge/Frontend-Gradio-lightgrey?style=for-the-badge&logo=gradio&logoColor=white)
 
----
-
-## 📌 Project Overview
-
-**ProConnect** is an AI-powered **Autonomous Agent** that automates the research required for professional networking. It uses a **Retrieval-Augmented Generation (RAG)** approach to search the live web for a person's recent activity and drafts a personalized LinkedIn connection request.
-
-The project demonstrates:
-- **Agentic Search:** Autonomously querying Google via **SerpApi** to find real-time information.
-- **Smart Prioritization:** Automatically detecting and prioritizing **LinkedIn profiles** as the "source of truth."
-- **Structured Extraction:** Using **LangChain** to parse unstructured web data into structured fields (Current Role, Company).
-- **Modern UI:** A clean, responsive interface built with **Gradio**.
+**ProConnect** is an advanced AI-powered autonomous agent designed to streamline professional networking. Leveraging **Retrieval-Augmented Generation (RAG)**, it autonomously searches the web for a target's recent activity, prioritizes verifiable sources (like LinkedIn), and drafts highly personalized connection requests.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- 🔍 **Real-Time Web RAG:** Scrapes the latest results from Google (not a static database).
-- 🎯 **LinkedIn-First Logic:** Prioritizes official LinkedIn bios; falls back to news/articles if no profile is found.
-- 🤖 **Role Extraction:** Intelligently identifies and isolates the user's current **Job Title** and **Company** for context.
-- 🛡️ **Hallucination Guardrails:** Strict prompting ensures the AI only uses retrieved facts.
-
----
-
-## 🧑‍💻 Skills & Technologies
-
-- **Programming Language:** Python 3.12+
-- **Package Manager:** uv (Modern, fast Python package installer)
-- **LLM Framework:** LangChain (Chains, Prompts, Output Parsers)
-- **Model Provider:** OpenAI (GPT-4o)
-- **Search Engine:** SerpApi (Google Search Engine Results API)
-- **Frontend:** Gradio (Web UI)
+- **🔎 Autonomous Web RAG**: Performs real-time semantic searches using SerpApi (Google) to fetch the latest data.
+- **🧠 Intelligent Source Prioritization**: Automatically detects and prioritizes official LinkedIn profiles as the "source of truth," falling back to news articles if necessary.
+- **📄 Structured Data Extraction**: Parses unstructured web content into structured fields (Current Role, Company, Recent News).
+- **🛡️ Production-Ready Architecture**: Built with a modular service layer, centralized configuration, and comprehensive error handling.
+- **🐳 Dockerized**: Fully containerized for easy deployment.
 
 ---
 
-## ▶️ How to Run the Project
+## �️ Tech Stack
 
-## 1. Prerequisites
-Ensure you have `uv` installed (or use pip/poetry):
-pip install uv
+- **Core**: Python 3.12+, `uv` (Package Management)
+- **AI/LLM**: LangChain, OpenAI GPT-4o
+- **Search**: SerpApi (Google Search Results)
+- **Interface**: Gradio (Web UI) & Typer (CLI)
+- **Infra**: Docker, Docker Compose
+- **Quality**: Pytest, Pydantic Settings
 
-## 2. Prerequisites
+---
+
+## ⚡ Getting Started
+
+### Prerequisites
+
+- **Python 3.12+** (if running locally)
+- **Docker** (optional, for containerized run)
+- **API Keys**:
+  - `OPENAI_API_KEY`
+  - `SERPAPI_API_KEY`
+
+### 1. clone the Repository
+
+```bash
 git clone https://github.com/mojarrad353/proconnect_agent_rag.git
-
 cd proconnect_agent_rag
+```
 
-## 3.Configure Environment
-Create a .env file in the root directory and add your API keys
+### 2. Configure Environment
 
-## 4. Install Dependencies
-uv sync
+Create a `.env` file in the root directory:
 
-## 5. Run the agent
-For showing on the web using Gradio: 
-uv run src/app.py
+```bash
+OPENAI_API_KEY=sk-your-openai-key
+SERPAPI_API_KEY=your-serpapi-key
+```
 
-For showing in the terminal: 
-uv run src/main.py
+### 3. Run with Docker (Recommended)
 
+Simply use Docker Compose to build and start the service:
+
+```bash
+docker-compose up --build
+```
+
+Access the Web UI at **http://localhost:7860**.
+
+---
+
+## 💻 Local Development
+
+If you prefer to run locally using `uv`:
+
+1.  **Install Dependencies**:
+    ```bash
+    uv sync
+    ```
+
+2.  **Run the Web App**:
+    ```bash
+    uv run src/linkedin_icebreaker/app.py
+    ```
+
+3.  **Run the CLI**:
+    ```bash
+    uv run src/linkedin_icebreaker/main.py
+    ```
+
+4.  **Run Tests**:
+    ```bash
+    uv run pytest
+    ```
+
+---
+
+## 📂 Project Structure
+
+```text
+src/linkedin_icebreaker/
+├── app.py              # Gradio Web Interface
+├── main.py             # CLI Entry Point
+├── config.py           # Configuration (Pydantic)
+├── services/           # Business Logic Layer
+│   └── icebreaker.py   # RAG Engine
+└── utils/              # Utilities (Logging, etc.)
+```
