@@ -80,12 +80,12 @@ If you prefer to run locally using `uv`:
 
 2.  **Run the Web App**:
     ```bash
-    uv run src/linkedin_icebreaker/app.py
+    uv run src/proconnect_agent_rag/app.py
     ```
 
 3.  **Run the CLI**:
     ```bash
-    uv run src/linkedin_icebreaker/main.py
+    uv run src/proconnect_agent_rag/main.py
     ```
 
 4.  **Run Tests**:
@@ -98,7 +98,7 @@ If you prefer to run locally using `uv`:
 ## 📂 Project Structure
 
 ```text
-src/linkedin_icebreaker/
+src/proconnect_agent_rag/
 ├── app.py              # Gradio Web Interface
 ├── main.py             # CLI Entry Point
 ├── config.py           # Configuration (Pydantic)

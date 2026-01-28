@@ -29,4 +29,4 @@ COPY README.md ./
 EXPOSE 7860
 
 # Default command (can be overridden in docker-compose)
-CMD ["uv", "run", "src/linkedin_icebreaker/app.py"]
+CMD ["uv", "run", "src/proconnect_agent_rag/app.py"]

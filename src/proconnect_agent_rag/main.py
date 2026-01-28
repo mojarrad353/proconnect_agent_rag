@@ -1,5 +1,5 @@
-from linkedin_icebreaker.services.icebreaker import IcebreakerRAG
-from linkedin_icebreaker.config import get_settings
+from proconnect_agent_rag.services.icebreaker import IcebreakerRAG
+from proconnect_agent_rag.config import get_settings
 import sys
 
 def main():

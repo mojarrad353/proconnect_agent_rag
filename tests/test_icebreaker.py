@@ -1,22 +1,22 @@
 import pytest
 from unittest.mock import MagicMock, patch
-from linkedin_icebreaker.services.icebreaker import IcebreakerRAG
+from proconnect_agent_rag.services.icebreaker import IcebreakerRAG
 
 @pytest.fixture
 def mock_settings():
-    with patch("linkedin_icebreaker.services.icebreaker.get_settings") as mock:
+    with patch("proconnect_agent_rag.services.icebreaker.get_settings") as mock:
         mock.return_value.OPENAI_API_KEY = "test_openai_key"
         mock.return_value.SERPAPI_API_KEY = "test_serpapi_key"
         yield mock
 
 @pytest.fixture
 def mock_llm():
-    with patch("linkedin_icebreaker.services.icebreaker.ChatOpenAI") as mock:
+    with patch("proconnect_agent_rag.services.icebreaker.ChatOpenAI") as mock:
         yield mock
 
 @pytest.fixture
 def mock_google_search():
-    with patch("linkedin_icebreaker.services.icebreaker.GoogleSearch") as mock:
+    with patch("proconnect_agent_rag.services.icebreaker.GoogleSearch") as mock:
         yield mock
 
 def test_icebreaker_initialization(mock_settings, mock_llm):
@@ -86,7 +86,7 @@ def test_generate_icebreaker_flow(mock_settings, mock_llm, mock_google_search):
     # Actually, ChatOpenAI invokes return BaseMessage.
     
     # To properly unit test without making real calls:
-    with patch("linkedin_icebreaker.services.icebreaker.StrOutputParser") as mock_parser:
+    with patch("proconnect_agent_rag.services.icebreaker.StrOutputParser") as mock_parser:
         # The parser invoke returns the string
         mock_parser.return_value.invoke.return_value = "Parsed String"
         

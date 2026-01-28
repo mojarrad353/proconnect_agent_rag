@@ -7,4 +7,4 @@ services:
       - .env
     volumes:
       - ./src:/app/src
-    command: uv run src/linkedin_icebreaker/app.py
+    command: uv run src/proconnect_agent_rag/app.py

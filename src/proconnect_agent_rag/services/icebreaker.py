@@ -5,8 +5,8 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-from linkedin_icebreaker.config import get_settings
-from linkedin_icebreaker.utils.logging import setup_logging
+from proconnect_agent_rag.config import get_settings
+from proconnect_agent_rag.utils.logging import setup_logging
 
 logger = setup_logging(__name__)
 

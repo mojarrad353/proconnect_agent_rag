@@ -1,5 +1,5 @@
 import gradio as gr
-from linkedin_icebreaker.services.icebreaker import IcebreakerRAG
+from proconnect_agent_rag.services.icebreaker import IcebreakerRAG
 
 def get_icebreaker(name, company):
     if not name:

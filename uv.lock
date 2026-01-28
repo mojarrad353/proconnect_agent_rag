@@ -1383,49 +1383,6 @@ wheels = [
 ]
 
 [[package]]
-name = "linkedin-icebreaker"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "chromadb" },
-    { name = "google-search-results" },
-    { name = "gradio" },
-    { name = "langchain" },
-    { name = "langchain-chroma" },
-    { name = "langchain-community" },
-    { name = "langchain-core" },
-    { name = "langchain-huggingface" },
-    { name = "langchain-openai" },
-    { name = "langchain-text-splitters" },
-    { name = "pydantic" },
-    { name = "pydantic-settings" },
-    { name = "pytest" },
-    { name = "python-dotenv" },
-    { name = "sentence-transformers" },
-    { name = "typer" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "chromadb", specifier = ">=1.4.1" },
-    { name = "google-search-results", specifier = ">=2.4.2" },
-    { name = "gradio", specifier = ">=6.4.0" },
-    { name = "langchain", specifier = ">=1.2.7" },
-    { name = "langchain-chroma", specifier = ">=1.1.0" },
-    { name = "langchain-community", specifier = ">=0.4.1" },
-    { name = "langchain-core", specifier = ">=1.2.7" },
-    { name = "langchain-huggingface", specifier = ">=1.2.0" },
-    { name = "langchain-openai", specifier = ">=1.1.7" },
-    { name = "langchain-text-splitters", specifier = ">=1.1.0" },
-    { name = "pydantic", specifier = ">=2.12.5" },
-    { name = "pydantic-settings", specifier = ">=2.0.0" },
-    { name = "pytest", specifier = ">=8.0.0" },
-    { name = "python-dotenv", specifier = ">=1.2.1" },
-    { name = "sentence-transformers", specifier = ">=5.2.2" },
-    { name = "typer", specifier = ">=0.21.1" },
-]
-
-[[package]]
 name = "markdown-it-py"
 version = "4.0.0"
 source = { registry = "https://pypi.org/simple" }
@@ -2308,6 +2265,49 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/48/20/60ae67bb9d82f00427946218d49e2e7e80fb41c15dc5019482289ec9ce8d/posthog-5.4.0.tar.gz", hash = "sha256:701669261b8d07cdde0276e5bc096b87f9e200e3b9589c5ebff14df658c5893c", size = 88076, upload-time = "2025-06-20T23:19:23.485Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4f/98/e480cab9a08d1c09b1c59a93dade92c1bb7544826684ff2acbfd10fcfbd4/posthog-5.4.0-py3-none-any.whl", hash = "sha256:284dfa302f64353484420b52d4ad81ff5c2c2d1d607c4e2db602ac72761831bd", size = 105364, upload-time = "2025-06-20T23:19:22.001Z" },
+]
+
+[[package]]
+name = "proconnect-agent-rag"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "chromadb" },
+    { name = "google-search-results" },
+    { name = "gradio" },
+    { name = "langchain" },
+    { name = "langchain-chroma" },
+    { name = "langchain-community" },
+    { name = "langchain-core" },
+    { name = "langchain-huggingface" },
+    { name = "langchain-openai" },
+    { name = "langchain-text-splitters" },
+    { name = "pydantic" },
+    { name = "pydantic-settings" },
+    { name = "pytest" },
+    { name = "python-dotenv" },
+    { name = "sentence-transformers" },
+    { name = "typer" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "chromadb", specifier = ">=1.4.1" },
+    { name = "google-search-results", specifier = ">=2.4.2" },
+    { name = "gradio", specifier = ">=6.4.0" },
+    { name = "langchain", specifier = ">=1.2.7" },
+    { name = "langchain-chroma", specifier = ">=1.1.0" },
+    { name = "langchain-community", specifier = ">=0.4.1" },
+    { name = "langchain-core", specifier = ">=1.2.7" },
+    { name = "langchain-huggingface", specifier = ">=1.2.0" },
+    { name = "langchain-openai", specifier = ">=1.1.7" },
+    { name = "langchain-text-splitters", specifier = ">=1.1.0" },
+    { name = "pydantic", specifier = ">=2.12.5" },
+    { name = "pydantic-settings", specifier = ">=2.0.0" },
+    { name = "pytest", specifier = ">=8.0.0" },
+    { name = "python-dotenv", specifier = ">=1.2.1" },
+    { name = "sentence-transformers", specifier = ">=5.2.2" },
+    { name = "typer", specifier = ">=0.21.1" },
 ]
 
 [[package]]
