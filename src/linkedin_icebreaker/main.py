@@ -1,13 +1,14 @@
-import os
+from linkedin_icebreaker.services.icebreaker import IcebreakerRAG
+from linkedin_icebreaker.config import get_settings
 import sys
-from dotenv import load_dotenv
-from rag_engine import IcebreakerRAG
-
-load_dotenv()
 
 def main():
-    if not os.getenv("OPENAI_API_KEY"):
-        sys.exit("Error: OPENAI_API_KEY is missing.")
+    try:
+        settings = get_settings()
+        if not settings.OPENAI_API_KEY:
+             sys.exit("Error: OPENAI_API_KEY is missing.")
+    except Exception as e:
+        sys.exit(f"Configuration Error: {e}")
     
     print("--- LinkedIn Icebreaker Agent (Web Search Mode) ---")
     

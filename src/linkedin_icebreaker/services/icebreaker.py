@@ -1,33 +1,35 @@
-import os
-import logging
-from typing import Dict, List
+from typing import Dict, Optional, Tuple
 
 from serpapi import GoogleSearch
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
-logger = logging.getLogger(__name__)
+from linkedin_icebreaker.config import get_settings
+from linkedin_icebreaker.utils.logging import setup_logging
+
+logger = setup_logging(__name__)
 
 class IcebreakerRAG:
     def __init__(self):
-        self.api_key = os.getenv("SERPAPI_API_KEY")
-        self.openai_key = os.getenv("OPENAI_API_KEY")
+        self.settings = get_settings()
         
-        if not self.api_key:
-            raise ValueError("Missing SERPAPI_API_KEY in .env file")
-        if not self.openai_key:
-            raise ValueError("Missing OPENAI_API_KEY in .env file")
+        if not self.settings.SERPAPI_API_KEY:
+            raise ValueError("Missing SERPAPI_API_KEY")
+        if not self.settings.OPENAI_API_KEY:
+            raise ValueError("Missing OPENAI_API_KEY")
 
         # Initializing LLM
-        print("DEBUG: Initializing LLM...")
-        self.llm = ChatOpenAI(model="gpt-4o", temperature=0.7)
+        logger.debug("Initializing LLM...")
+        self.llm = ChatOpenAI(
+            model="gpt-4o", 
+            temperature=0.7,
+            api_key=self.settings.OPENAI_API_KEY
+        )
         self.chain = self._build_chain()
 
-    def _build_chain(self):
+    def _build_chain(self) -> Tuple[ChatPromptTemplate, ChatPromptTemplate]:
         # 1. Extraction & Summarization Prompt
-        # Explicitly asking for a structured output with separators
         search_prompt = ChatPromptTemplate.from_template(
         """
             You are a research assistant. 
@@ -47,7 +49,6 @@ class IcebreakerRAG:
         )
 
         # 2. Writing Prompt
-        # Take the extracted role/company and the summary to write the message
         writer_prompt = ChatPromptTemplate.from_template(
             """
             You are an expert networker. Write a personalized LinkedIn connection message.
@@ -80,7 +81,7 @@ class IcebreakerRAG:
             params = {
                 "engine": "google",
                 "q": query,
-                "api_key": self.api_key,
+                "api_key": self.settings.SERPAPI_API_KEY,
                 "hl": "en",
                 "num": 10
             }

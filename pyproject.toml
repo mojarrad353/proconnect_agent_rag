@@ -1,3 +1,7 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "linkedin-icebreaker"
 version = "0.1.0"
@@ -19,4 +23,9 @@ dependencies = [
     "python-dotenv>=1.2.1",
     "sentence-transformers>=5.2.2",
     "typer>=0.21.1",
+    "pydantic-settings>=2.0.0",
+    "pytest>=8.0.0",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = "src"

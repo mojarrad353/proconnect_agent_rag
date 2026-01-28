@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    ports:
+      - "7860:7860"
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+    command: uv run src/linkedin_icebreaker/app.py
